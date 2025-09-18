@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../ui';
+import { Date, Divider } from '../svg';
 
 interface DateSectionProps {
   onAgendarEvento: () => void;
@@ -8,21 +9,13 @@ interface DateSectionProps {
 export function DateSection({ onAgendarEvento }: DateSectionProps) {
   return (
     <div className="h-[100vh] relative flex items-center justify-center">
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
+      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-mobile-margin">
         <div className="section-content text-center">
           {/* Top SVG (title flourish) */}
           <div className="mb-8 flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="145"
-              height="1"
-              viewBox="0 0 145 1"
-              fill="none"
-            >
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" />
-              <path d="M0 0H145V1H0V0Z" fill="#E5E2EF" opacity="0.12" />
-              <path d="M0 0H145V1H0V0Z" fill="#D2C1ED" opacity="0.08" />
-            </svg>
+            <div className="svg-icon-responsive">
+              <Date />
+            </div>
           </div>
 
           {/* Text stack */}
@@ -60,17 +53,9 @@ export function DateSection({ onAgendarEvento }: DateSectionProps) {
 
           {/* Divider SVG */}
           <div className="mb-8 flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="145"
-              height="1"
-              viewBox="0 0 145 1"
-              fill="none"
-            >
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" />
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" opacity="0.1" />
-              <path d="M0 0H145V1H0V0Z" fill="#E5E2EF" opacity="0.14" />
-            </svg>
+            <div className="svg-icon-responsive">
+              <Divider />
+            </div>
           </div>
 
           {/* Outline Button */}

@@ -92,12 +92,12 @@ export function ClientApp({
   const handleEnviarWhatsapp = () => {
     let summary = '';
     if (asistencia === 'No puedo ir :(') {
-      summary = `Asistencia: No puedo ir :(. Somos ${invitados.trim()}.`;
+      summary = `Soy/somos ${invitados.trim()}. Perdón, no puedo ir :(`;
     } else {
       summary =
-        `Asistencia: Si, confirmo!. Somos ${invitados.trim()}` +
+        `Soy/somos ${invitados.trim()} Sí, asistencia confirmada!` +
         (restricciones.trim()
-          ? `. Restriccion alimenticia: ${restricciones.trim()}.`
+          ? `. Restricción alimenticia: ${restricciones.trim()}.`
           : `.`);
     }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;

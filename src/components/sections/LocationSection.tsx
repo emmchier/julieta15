@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../ui';
+import { Divider, Location } from '../svg';
 
 interface LocationSectionProps {
   onVerUbicacion: () => void;
@@ -8,20 +9,12 @@ interface LocationSectionProps {
 export function LocationSection({ onVerUbicacion }: LocationSectionProps) {
   return (
     <div className="h-[100vh] flex items-center justify-center relative">
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
+      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-mobile-margin">
         <div className="section-content text-center">
           <div className="flex justify-center mb-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="145"
-              height="1"
-              viewBox="0 0 145 1"
-              fill="none"
-            >
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" />
-              <path d="M0 0H145V1H0V0Z" fill="#D2C1ED" opacity="0.12" />
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" opacity="0.09" />
-            </svg>
+            <div className="svg-icon-responsive">
+              <Location />
+            </div>
           </div>
 
           <div className="mb-8">
@@ -41,33 +34,28 @@ export function LocationSection({ onVerUbicacion }: LocationSectionProps) {
                   color: '#A897CE',
                   fontSize: '36px',
                 }}
+                className="uppercase"
               >
-                DARWIN 1351 | CABA
+                Jano&apos;s Darwin 2
               </h2>
             </div>
-            <p
-              style={{
-                fontFamily: 'Quando, serif',
-                color: '#626262',
-                fontSize: '20px',
-              }}
-            >
-              de 21:00 a 5:00 h
-            </p>
+            <div className="my-2">
+              <p
+                style={{
+                  fontFamily: 'Quando, serif',
+                  color: '#626262',
+                  fontSize: '20px',
+                }}
+              >
+                DARWIN 1351 | CABA
+              </p>
+            </div>
           </div>
 
           <div className="flex justify-center mb-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="145"
-              height="1"
-              viewBox="0 0 145 1"
-              fill="none"
-            >
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" />
-              <path d="M0 0H145V1H0V0Z" fill="#E5E2EF" opacity="0.11" />
-              <path d="M0 0H145V1H0V0Z" fill="#D2C1ED" opacity="0.13" />
-            </svg>
+            <div className="svg-icon-responsive">
+              <Divider />
+            </div>
           </div>
 
           <div className="flex justify-center">

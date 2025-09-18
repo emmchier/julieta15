@@ -7,6 +7,7 @@ import {
   Textarea,
   Button,
 } from '../ui/index';
+import { Confirm, Divider } from '../svg';
 
 interface RSVPSectionProps {
   asistencia: string;
@@ -34,17 +35,9 @@ export function RSVPSection({
       <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
         <div className="section-content">
           <div className="flex justify-center mb-12">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="145"
-              height="1"
-              viewBox="0 0 145 1"
-              fill="none"
-            >
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" />
-              <path d="M0 0H145V1H0V0Z" fill="#E5E2EF" opacity="0.14" />
-              <path d="M0 0H145V1H0V0Z" fill="#A897CE" opacity="0.1" />
-            </svg>
+            <div className="svg-icon-responsive">
+              <Confirm />
+            </div>
           </div>
 
           <div className="text-center mb-12">
@@ -108,7 +101,7 @@ export function RSVPSection({
                   fontSize: '16px',
                 }}
               >
-                No puedo ir
+                No puedo ir :(
               </Label>
             </div>
           </RadioGroup>
@@ -138,7 +131,11 @@ export function RSVPSection({
                 setInvitados(e.target.value)
               }
               className="form-input-custom min-h-[40px] max-h-[50vh] resize-none placeholder:text-transparent"
-              style={{ fontFamily: 'Quando, serif', color: '#626262' }}
+              style={{
+                fontFamily: 'Quando, serif',
+                color: '#626262',
+                fontWeight: '600',
+              }}
               required
             />
             <p className="form-helper-text text-left mt-1">
@@ -167,7 +164,11 @@ export function RSVPSection({
                 setRestricciones(e.target.value)
               }
               className="form-input-custom h-10 placeholder:text-transparent"
-              style={{ fontFamily: 'Quando, serif', color: '#626262' }}
+              style={{
+                fontFamily: 'Quando, serif',
+                color: '#626262',
+                fontWeight: '600',
+              }}
             />
             <p className="form-helper-text text-left mt-1">
               Ej: Vegetariano, Celíaco, Vegano.
@@ -189,6 +190,12 @@ export function RSVPSection({
             >
               Enviar por Whatsapp
             </Button>
+          </div>
+
+          <div className="flex justify-center mb-12">
+            <div className="svg-icon-responsive">
+              <Divider />
+            </div>
           </div>
         </div>
       </div>

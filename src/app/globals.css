@@ -208,27 +208,64 @@ body {
 
 .form-input-custom {
   box-shadow: none !important;
-  background: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
   border: 0 !important;
   border-bottom: 1px solid #626262 !important;
   border-radius: 0 !important;
   outline: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  font-weight: 600 !important;
 }
 
 .form-input-custom:focus,
 .form-input-custom:focus-visible {
-  box-shadow: none !important;
+  box-shadow:
+    inset 0 -1px 0 0 #a897ce,
+    inset 0 -2.5px 0 0 #a897ce !important;
   ring: none !important;
-  border-bottom: 2.5px solid #a897ce !important;
+  border-bottom: 0 !important;
   outline: none !important;
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Cuando el campo tiene valores pero no está en focus */
+.form-input-custom:not(:focus):not(:focus-visible):not(:placeholder-shown) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid #626262 !important;
 }
 
 .form-helper-text {
   color: #626262 !important;
   font-family: Quando, serif !important;
   font-size: 14px !important;
+}
+
+/* Responsive scaling for SVGs and Dividers - larger on desktop */
+.svg-icon-responsive {
+  transform: scale(1);
+}
+
+@media (min-width: 1024px) {
+  .svg-icon-responsive {
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile margin for sections (except RSVP) */
+.section-mobile-margin {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+@media (min-width: 1024px) {
+  .section-mobile-margin {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 [style*='Purple Purse'],

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Countdown, Divider } from '../svg';
 
 interface CountdownSectionProps {
   timeLeft: {
@@ -12,8 +13,14 @@ interface CountdownSectionProps {
 export function CountdownSection({ timeLeft }: CountdownSectionProps) {
   return (
     <div className="h-[100vh] flex items-center justify-center">
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
-        <div className="section-content text-center">
+      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-mobile-margin">
+        <div className="flex justify-center mb-8">
+          <div className="svg-icon-responsive">
+            <Countdown />
+          </div>
+        </div>
+
+        <div className="section-content text-center mb-12">
           <p
             style={{
               fontFamily: 'Quando, serif',
@@ -114,6 +121,12 @@ export function CountdownSection({ timeLeft }: CountdownSectionProps) {
                 seg
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <div className="svg-icon-responsive">
+            <Divider />
           </div>
         </div>
       </div>
