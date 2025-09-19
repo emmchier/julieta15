@@ -1,9 +1,17 @@
 import React from 'react';
 import { Julieta } from '../svg';
+// import { FlowerLeft1 } from '../flowers';
 
 export function ClosingSection() {
   return (
     <div className="h-[100vh] flex items-center justify-center relative overflow-hidden">
+      {/* <div
+        data-flower="flower-left-2"
+        className="absolute"
+        style={{ left: '-15%', top: '-180px' }}
+      >
+        <FlowerLeft1 />
+      </div> */}
       <div className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 z-10 svg-scale-mobile">
         <div style={{ transform: 'scale(0.6)', opacity: 0.5 }}>
           <Julieta />

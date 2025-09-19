@@ -1,11 +1,26 @@
 import React from 'react';
 import { XV, Julieta } from '../svg';
+import { FlowerLeft1, PetalosRight1 } from '../flowers';
 
 export function HeaderSection() {
   return (
     <div className="h-[100vh] relative flex items-center justify-center overflow-hidden">
       <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
         <div className="section-content text-center">
+          <div
+            data-flower="flower-left-2"
+            className="absolute"
+            style={{ right: '40px', top: '-305px' }}
+          >
+            <FlowerLeft1 />
+          </div>
+          <div
+            data-flower="flower-left-2"
+            className="absolute"
+            style={{ left: '60px', top: '-300px' }}
+          >
+            <PetalosRight1 />
+          </div>
           <div className="relative mb-4 flex justify-center items-center">
             {/* Background SVG (XV) - Made bigger */}
             <div className="absolute svg-scale-mobile">
