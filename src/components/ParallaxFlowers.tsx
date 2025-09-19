@@ -76,7 +76,7 @@ export function ParallaxFlowers() {
       {/* FlowerLeft1 - Arriba a la izquierda, fuera de campo, asomando solamente la mitad de abajo y la mitad de la derecha */}
       <div
         data-flower="flower-left-1"
-        className="absolute -left-[13%] lg:left-[5%] -top-[7%] translate-y-[20px] rotate-[15deg] scale-100 lg:scale-200"
+        className="absolute -left-[13%] lg:left-[5%] -top-[7%] translate-y-[30px] rotate-[15deg] scale-100 lg:scale-200"
       >
         <FlowerLeft1 />
       </div>
@@ -84,7 +84,7 @@ export function ParallaxFlowers() {
       {/* PetalosLeft1 - Arriba a la izquierda, un poco por debajo de FlowerLeft1, se pierde fuera de campo la mitad por la izquierda */}
       <div
         data-flower="petalos-left-1"
-        className="absolute left-[-20%] lg:left-[0%] top-[6%] translate-y-[20px] -rotate-[25deg] scale-100 lg:scale-200"
+        className="absolute left-[-20%] lg:left-[0%] top-[6%] translate-y-[30px] -rotate-[25deg] scale-100 lg:scale-200"
       >
         <PetalosLeft1 />
       </div>
@@ -92,7 +92,7 @@ export function ParallaxFlowers() {
       {/* FlowerLeft2 - A la derecha de FlowerLeft1, un poco más metida hacia arriba y fuera de campo en el top */}
       <div
         data-flower="flower-left-2"
-        className="absolute left-[20px] lg:left-[60px] -top-[180px] translate-y-[20px] rotate-[45deg] scale-100 lg:scale-200"
+        className="absolute left-[20px] lg:left-[60px] -top-[180px] translate-y-[30px] rotate-[45deg] scale-100 lg:scale-200"
       >
         <FlowerLeft2 />
       </div>
@@ -100,14 +100,14 @@ export function ParallaxFlowers() {
       {/* FlowerLeft3 - Justo debajo de FlowerLeft2, escondida por detras de esta pero en la parte de abajo */}
       <div
         data-flower="flower-left-3"
-        className="absolute -left-[10%] lg:left-[8%] -top-[10%] translate-y-[20px] -rotate-[35deg] scale-100 lg:scale-200"
+        className="absolute -left-[10%] lg:left-[8%] -top-[10%] translate-y-[30px] -rotate-[35deg] scale-100 lg:scale-200"
       >
         <FlowerLeft3 />
       </div>
 
       <div
         data-flower="flower-left-3"
-        className="absolute right-[10%] -top-[100px] translate-y-[20px] -rotate-[35deg] scale-100 lg:scale-200"
+        className="absolute right-[10%] -top-[100px] translate-y-[30px] -rotate-[35deg] scale-100 lg:scale-200"
       >
         <FlowerRight1 />
       </div>
@@ -115,7 +115,7 @@ export function ParallaxFlowers() {
       {/* FlowerRight1 - A unos 30% del right de la pantalla, a la misma altura que FlowerLeft1 */}
       <div
         data-flower="flower-right-1"
-        className="absolute -right-[10%] -top-[8%] translate-y-[20px] -rotate-[10deg] scale-100 lg:scale-200"
+        className="absolute -right-[10%] -top-[8%] translate-y-[30px] -rotate-[10deg] scale-100 lg:scale-200"
       >
         <PetalosRight1 />
       </div>
@@ -123,7 +123,7 @@ export function ParallaxFlowers() {
       {/* PetalosRight1 - Un poco más abajo que FlowerRight1, casi exactamente en la esquina superior derecha de la pantalla */}
       <div
         data-flower="petalos-right-1"
-        className="absolute -right-[35px] top-[10px] translate-y-[20px] scale-100 lg:scale-200"
+        className="absolute -right-[35px] top-[10px] translate-y-[30px] scale-100 lg:scale-200"
       >
         <FlowerRight1 />
       </div>
@@ -131,7 +131,7 @@ export function ParallaxFlowers() {
       {/* FlowerRight2 - A la misma altura que PetalosRight1. Fuera de campo hacia la derecha de la pantalla */}
       <div
         data-flower="flower-right-2"
-        className="absolute left-[110%] top-[5%] translate-y-[20px] -rotate-[20deg] scale-100 lg:scale-200"
+        className="absolute left-[110%] top-[5%] translate-y-[30px] -rotate-[20deg] scale-100 lg:scale-200"
       >
         <FlowerRight2 />
       </div>
@@ -139,7 +139,7 @@ export function ParallaxFlowers() {
       {/* FlowerRight3 - Debajo de FlowerRight2, a unos 100px de esta, fuera de campo por la derecha asomando una parte de la mitad izquierda */}
       <div
         data-flower="flower-right-3"
-        className="absolute left-[105%] top-[20%] translate-y-[20px] rotate-[10deg] scale-100 lg:scale-200"
+        className="absolute left-[105%] top-[20%] translate-y-[30px] rotate-[10deg] scale-100 lg:scale-200"
       >
         <FlowerRight3 />
       </div>
@@ -147,7 +147,7 @@ export function ParallaxFlowers() {
       {/* Shine 1 - Top left small */}
       <div
         data-flower="shine-1"
-        className="absolute left-[8%] top-[15%] translate-y-[20px] rotate-[45deg]"
+        className="absolute left-[8%] top-[15%] translate-y-[30px] rotate-[45deg]"
       >
         <div className="scale-[0.4]">
           <Shine />
@@ -157,7 +157,7 @@ export function ParallaxFlowers() {
       {/* Shine 2 - Top right small */}
       <div
         data-flower="shine-2"
-        className="absolute left-[88%] top-[12%] translate-y-[20px] -rotate-[30deg]"
+        className="absolute left-[88%] top-[12%] translate-y-[30px] -rotate-[30deg]"
       >
         <div className="scale-[0.3]">
           <Shine />
@@ -167,7 +167,7 @@ export function ParallaxFlowers() {
       {/* Shine 3 - Middle left */}
       <div
         data-flower="shine-3"
-        className="absolute left-[5%] top-[35%] translate-y-[20px] rotate-[60deg]"
+        className="absolute left-[5%] top-[35%] translate-y-[30px] rotate-[60deg]"
       >
         <div className="scale-[0.5]">
           <Shine />
@@ -177,7 +177,7 @@ export function ParallaxFlowers() {
       {/* Shine 4 - Middle right */}
       <div
         data-flower="shine-4"
-        className="absolute left-[92%] top-[38%] translate-y-[20px] -rotate-[45deg]"
+        className="absolute left-[92%] top-[38%] translate-y-[30px] -rotate-[45deg]"
       >
         <div className="scale-[0.4]">
           <Shine />
@@ -187,7 +187,7 @@ export function ParallaxFlowers() {
       {/* Shine 5 - Center top */}
       <div
         data-flower="shine-5"
-        className="absolute left-[50%] top-[8%] translate-y-[20px] rotate-[15deg]"
+        className="absolute left-[50%] top-[8%] translate-y-[30px] rotate-[15deg]"
       >
         <div className="scale-[0.3]">
           <Shine />
@@ -197,7 +197,7 @@ export function ParallaxFlowers() {
       {/* Shine 6 - Center bottom */}
       <div
         data-flower="shine-6"
-        className="absolute left-[48%] top-[85%] translate-y-[20px] -rotate-[60deg]"
+        className="absolute left-[48%] top-[85%] translate-y-[30px] -rotate-[60deg]"
       >
         <div className="scale-[0.4]">
           <Shine />
@@ -207,7 +207,7 @@ export function ParallaxFlowers() {
       {/* Shine 7 - Left side middle */}
       <div
         data-flower="shine-7"
-        className="absolute left-[12%] top-[55%] translate-y-[20px] rotate-[75deg]"
+        className="absolute left-[12%] top-[55%] translate-y-[30px] rotate-[75deg]"
       >
         <div className="scale-[0.35]">
           <Shine />
@@ -217,7 +217,7 @@ export function ParallaxFlowers() {
       {/* Shine 8 - Right side middle */}
       <div
         data-flower="shine-8"
-        className="absolute left-[85%] top-[62%] translate-y-[20px] -rotate-[15deg]"
+        className="absolute left-[85%] top-[62%] translate-y-[30px] -rotate-[15deg]"
       >
         <div className="scale-[0.45]">
           <Shine />
@@ -227,7 +227,7 @@ export function ParallaxFlowers() {
       {/* Shine 9 - Bottom left */}
       <div
         data-flower="shine-9"
-        className="absolute left-[15%] top-[75%] translate-y-[20px] rotate-[30deg]"
+        className="absolute left-[15%] top-[75%] translate-y-[30px] rotate-[30deg]"
       >
         <div className="scale-[0.3]">
           <Shine />
@@ -237,7 +237,7 @@ export function ParallaxFlowers() {
       {/* Shine 10 - Bottom right */}
       <div
         data-flower="shine-10"
-        className="absolute left-[82%] top-[78%] translate-y-[20px] -rotate-[75deg]"
+        className="absolute left-[82%] top-[78%] translate-y-[30px] -rotate-[75deg]"
       >
         <div className="scale-[0.4]">
           <Shine />
@@ -247,7 +247,7 @@ export function ParallaxFlowers() {
       {/* Shine 11 - Upper middle left */}
       <div
         data-flower="shine-11"
-        className="absolute left-[25%] top-[25%] translate-y-[20px] -rotate-[45deg]"
+        className="absolute left-[25%] top-[25%] translate-y-[30px] -rotate-[45deg]"
       >
         <div className="scale-[0.35]">
           <Shine />
@@ -257,7 +257,7 @@ export function ParallaxFlowers() {
       {/* Shine 12 - Upper middle right */}
       <div
         data-flower="shine-12"
-        className="absolute left-[75%] top-[28%] translate-y-[20px] rotate-[45deg]"
+        className="absolute left-[75%] top-[28%] translate-y-[30px] rotate-[45deg]"
       >
         <div className="scale-[0.3]">
           <Shine />

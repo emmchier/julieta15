@@ -10,14 +10,14 @@ export function HeaderSection() {
           <div
             data-flower="flower-left-2"
             className="absolute"
-            style={{ right: '40px', top: '-305px' }}
+            style={{ right: '40px', top: '-280px' }}
           >
             <FlowerLeft1 />
           </div>
           <div
             data-flower="flower-left-2"
             className="absolute"
-            style={{ left: '60px', top: '-300px' }}
+            style={{ left: '60px', top: '-275px' }}
           >
             <PetalosRight1 />
           </div>
