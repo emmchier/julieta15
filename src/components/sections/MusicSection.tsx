@@ -7,6 +7,14 @@ import { GlassCard, Button, Textarea } from '../ui';
 export function MusicSection() {
   const [canciones, setCanciones] = useState('');
 
+  const handleSpotifyClick = () => {
+    window.open(
+      'https://open.spotify.com/playlist/00HtPcfBRrxU0oSd3FNfsG?si=ac10c2c9dd3147f9',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  };
+
   return (
     <div className="h-[100vh] flex items-center justify-center relative">
       <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-container-desktop">
@@ -95,6 +103,7 @@ export function MusicSection() {
               </p>
               <Button
                 variant="outline"
+                onClick={handleSpotifyClick}
                 className="h-10 px-4 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase"
                 style={{
                   fontFamily: 'Quando, serif',

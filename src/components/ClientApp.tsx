@@ -139,7 +139,7 @@ export function ClientApp({
   const handleEnviarWhatsapp = () => {
     let summary = '';
     if (asistencia === 'No puedo ir :(') {
-      summary = `Soy/somos ${invitados.trim()}. Perdón, no puedo ir :(`;
+      summary = 'Perdón, no puedo ir :(';
     } else {
       summary =
         `Soy/somos ${invitados.trim()} Sí, asistencia confirmada!` +
@@ -163,7 +163,8 @@ export function ClientApp({
     window.open(mapsLocation.mapsUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const isFormValid = invitados.trim() !== '';
+  const isFormValid =
+    asistencia === 'No puedo ir :(' ? true : invitados.trim() !== '';
 
   return (
     <div

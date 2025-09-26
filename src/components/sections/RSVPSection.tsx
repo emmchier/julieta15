@@ -113,89 +113,16 @@ export function RSVPSection({
             </RadioGroup>
           </div>
 
-          <div
-            className="section-content space-y-12 mb-8"
-            style={{ marginTop: '32px' }}
-          >
-            <div>
-              <div className="form-group">
-                <label
-                  htmlFor="nombres"
-                  className="form-label"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    fontSize: '14px',
-                    marginBottom: '8px',
-                    display: 'block',
-                  }}
-                >
-                  Nombre y apellido
-                </label>
-                <Textarea
-                  id="nombres"
-                  placeholder="Escribe tu nombre y apellido..."
-                  value={invitados}
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                    setInvitados(e.target.value)
-                  }
-                  className="w-full min-h-[40px] max-h-[50vh] resize-none"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFFFFF',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    outline: 'none',
-                  }}
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="form-group">
-                <label
-                  htmlFor="restricciones"
-                  className="form-label"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    fontSize: '14px',
-                    marginBottom: '8px',
-                    display: 'block',
-                  }}
-                >
-                  Restricción alimenticia
-                </label>
-                <Input
-                  id="restricciones"
-                  placeholder="Ej: Vegetariano, Celíaco, Vegano..."
-                  value={restricciones}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setRestricciones(e.target.value)
-                  }
-                  className="w-full h-10"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFFFFF',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    outline: 'none',
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Campo "Otras indicaciones" - Solo se muestra si la asistencia está confirmada */}
-            {asistencia === 'Si, confirmo!' && (
+          {/* Campos del formulario - Solo se muestran si la asistencia está confirmada */}
+          {asistencia === 'Si, confirmo!' && (
+            <div
+              className="section-content space-y-12 mb-8"
+              style={{ marginTop: '32px' }}
+            >
               <div>
                 <div className="form-group">
                   <label
-                    htmlFor="otrasIndicaciones"
+                    htmlFor="nombres"
                     className="form-label"
                     style={{
                       fontFamily: 'Quando, serif',
@@ -205,14 +132,51 @@ export function RSVPSection({
                       display: 'block',
                     }}
                   >
-                    Otras indicaciones
+                    Nombre y apellido
+                  </label>
+                  <Textarea
+                    id="nombres"
+                    placeholder="Escribe tu nombre y apellido..."
+                    value={invitados}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                      setInvitados(e.target.value)
+                    }
+                    className="w-full min-h-[40px] max-h-[50vh] resize-none"
+                    style={{
+                      fontFamily: 'Quando, serif',
+                      color: '#FFFFFF',
+                      backgroundColor: 'transparent',
+                      border: '1px solid #FFFFFF',
+                      borderRadius: '8px',
+                      padding: '12px',
+                      outline: 'none',
+                    }}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="form-group">
+                  <label
+                    htmlFor="restricciones"
+                    className="form-label"
+                    style={{
+                      fontFamily: 'Quando, serif',
+                      color: '#FFFFFF',
+                      fontSize: '14px',
+                      marginBottom: '8px',
+                      display: 'block',
+                    }}
+                  >
+                    Restricción alimenticia
                   </label>
                   <Input
-                    id="otrasIndicaciones"
-                    placeholder="Ej: Llegar tarde, traer algo específico..."
-                    value={otrasIndicaciones}
+                    id="restricciones"
+                    placeholder="Ej: Vegetariano, Celíaco, Vegano..."
+                    value={restricciones}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setOtrasIndicaciones(e.target.value)
+                      setRestricciones(e.target.value)
                     }
                     className="w-full h-10"
                     style={{
@@ -227,29 +191,69 @@ export function RSVPSection({
                   />
                 </div>
               </div>
-            )}
 
-            <div className="section-content flex justify-center">
-              <Button
-                onClick={handleEnviarWhatsapp}
-                disabled={!isFormValid}
-                variant="outline"
-                className={`h-12 px-6 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase ${
-                  !isFormValid ? 'opacity-50 pointer-events-none' : ''
-                }`}
-                style={{
-                  fontFamily: 'Quando, serif',
-                  fontSize: '14px',
-                }}
-              >
-                Enviar por Whatsapp
-              </Button>
+              {/* Campo "Otras indicaciones" - Solo se muestra si la asistencia está confirmada */}
+              {asistencia === 'Si, confirmo!' && (
+                <div>
+                  <div className="form-group">
+                    <label
+                      htmlFor="otrasIndicaciones"
+                      className="form-label"
+                      style={{
+                        fontFamily: 'Quando, serif',
+                        color: '#FFFFFF',
+                        fontSize: '14px',
+                        marginBottom: '8px',
+                        display: 'block',
+                      }}
+                    >
+                      Otras indicaciones
+                    </label>
+                    <Input
+                      id="otrasIndicaciones"
+                      placeholder="Ej: Llegar tarde, traer algo específico..."
+                      value={otrasIndicaciones}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setOtrasIndicaciones(e.target.value)
+                      }
+                      className="w-full h-10"
+                      style={{
+                        fontFamily: 'Quando, serif',
+                        color: '#FFFFFF',
+                        backgroundColor: 'transparent',
+                        border: '1px solid #FFFFFF',
+                        borderRadius: '8px',
+                        padding: '12px',
+                        outline: 'none',
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
+          )}
 
-            <div className="flex justify-center mb-12">
-              <div className="svg-icon-responsive">
-                <Divider />
-              </div>
+          {/* Botón de WhatsApp - Siempre visible */}
+          <div className="section-content flex justify-center mb-8">
+            <Button
+              onClick={handleEnviarWhatsapp}
+              disabled={!isFormValid}
+              variant="outline"
+              className={`h-12 px-6 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase ${
+                !isFormValid ? 'opacity-50 pointer-events-none' : ''
+              }`}
+              style={{
+                fontFamily: 'Quando, serif',
+                fontSize: '14px',
+              }}
+            >
+              Enviar por Whatsapp
+            </Button>
+          </div>
+
+          <div className="flex justify-center mb-12">
+            <div className="svg-icon-responsive">
+              <Divider />
             </div>
           </div>
         </GlassCard>

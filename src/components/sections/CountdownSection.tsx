@@ -35,7 +35,7 @@ export function CountdownSection({ timeLeft }: CountdownSectionProps) {
             </p>
 
             <div className="counter-mobile-grid flex gap-2 w-full">
-              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#6B3A9A] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
+              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#4A1A6B] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
                 <div
                   style={{
                     fontFamily: 'Purple Purse, cursive',
@@ -57,7 +57,7 @@ export function CountdownSection({ timeLeft }: CountdownSectionProps) {
                   días
                 </div>
               </div>
-              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#6B3A9A] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
+              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#4A1A6B] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
                 <div
                   style={{
                     fontFamily: 'Purple Purse, cursive',
@@ -79,7 +79,7 @@ export function CountdownSection({ timeLeft }: CountdownSectionProps) {
                   hs
                 </div>
               </div>
-              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#6B3A9A] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
+              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#4A1A6B] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
                 <div
                   style={{
                     fontFamily: 'Purple Purse, cursive',
@@ -101,7 +101,7 @@ export function CountdownSection({ timeLeft }: CountdownSectionProps) {
                   min
                 </div>
               </div>
-              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#6B3A9A] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
+              <div className="counter-item flex-1 h-[72px] rounded-lg bg-[#4A1A6B] px-2 pt-2 pb-2 flex flex-col items-center justify-between">
                 <div
                   style={{
                     fontFamily: 'Purple Purse, cursive',
