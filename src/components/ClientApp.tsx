@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
-  ParallaxFlowers,
   HeaderSection,
   DateSection,
   LocationSection,
   DressCodeSection,
+  MusicSection,
   RSVPSection,
   CountdownSection,
   ClosingSection,
@@ -52,6 +52,7 @@ export function ClientApp({
   const [asistencia, setAsistencia] = useState(initialAsistencia);
   const [invitados, setInvitados] = useState(initialInvitados);
   const [restricciones, setRestricciones] = useState(initialRestricciones);
+  const [otrasIndicaciones, setOtrasIndicaciones] = useState('');
 
   // Countdown state
   const [timeLeft, setTimeLeft] = useState({
@@ -60,6 +61,16 @@ export function ClientApp({
     minutes: 0,
     seconds: 0,
   });
+
+  // Audio state
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Parallax state
+  const [scrollY, setScrollY] = useState(0);
+
+  // Fade in state
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Calculate time until target date
   useEffect(() => {
@@ -88,6 +99,42 @@ export function ClientApp({
     return () => clearInterval(timer);
   }, [targetDate]);
 
+  // Audio control effect
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isAudioPlaying) {
+        audioRef.current.play().catch(() => {
+          // Silently fail if blocked
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isAudioPlaying]);
+
+  // Toggle audio function
+  const toggleAudio = () => {
+    setIsAudioPlaying(!isAudioPlaying);
+  };
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Fade in effect on load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Button handlers
   const handleEnviarWhatsapp = () => {
     let summary = '';
@@ -98,6 +145,9 @@ export function ClientApp({
         `Soy/somos ${invitados.trim()} Sí, asistencia confirmada!` +
         (restricciones.trim()
           ? `. Restricción alimenticia: ${restricciones.trim()}.`
+          : `.`) +
+        (otrasIndicaciones.trim()
+          ? ` Otras indicaciones: ${otrasIndicaciones.trim()}.`
           : `.`);
     }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;
@@ -116,38 +166,95 @@ export function ClientApp({
   const isFormValid = invitados.trim() !== '';
 
   return (
-    <div className="w-full" style={{ backgroundColor: '#ECE7F6' }}>
-      <ParallaxFlowers />
+    <div
+      className={`w-full max-w-full mx-auto relative transition-opacity duration-1000 ease-out ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      {/* Background Video with Parallax */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed top-0 left-0 w-full h-screen object-cover z-0 transition-opacity duration-1000"
+        style={{
+          width: '100vw',
+          height: '200vh',
+          filter: 'brightness(1.2) contrast(1.1)',
+          transform: `translateY(${scrollY * 0.05}px) translateY(-50%)`,
+          willChange: 'transform',
+        }}
+        onEnded={e => {
+          // Fade out effect when video ends
+          e.currentTarget.style.opacity = '0.3';
+          setTimeout(() => {
+            e.currentTarget.style.opacity = '1';
+          }, 200);
+        }}
+      >
+        <source src="/background-animate.mp4" type="video/mp4" />
+      </video>
 
-      {/* Section 1 - Header */}
-      <HeaderSection />
+      {/* Audio Element */}
+      <audio ref={audioRef} loop preload="auto" className="hidden">
+        <source src="/high-destiny.mp3" type="audio/mpeg" />
+      </audio>
 
-      {/* Section 2 - Date & Agendar */}
-      <DateSection onAgendarEvento={handleAgendarEvento} />
+      {/* Audio Control Button */}
+      <button
+        onClick={toggleAudio}
+        className="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition-all duration-200"
+        aria-label={isAudioPlaying ? 'Pausar música' : 'Reproducir música'}
+      >
+        {isAudioPlaying ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+          </svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        )}
+      </button>
 
-      {/* Section 3 - Location */}
-      <LocationSection onVerUbicacion={handleVerUbicacion} />
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        {/* Section 1 - Header */}
+        <HeaderSection />
 
-      {/* Section 4 - Dress Code */}
-      <DressCodeSection />
+        {/* Section 2 - Date & Agendar */}
+        <DateSection onAgendarEvento={handleAgendarEvento} />
 
-      {/* Section 5 - RSVP Form */}
-      <RSVPSection
-        asistencia={asistencia}
-        setAsistencia={setAsistencia}
-        invitados={invitados}
-        setInvitados={setInvitados}
-        restricciones={restricciones}
-        setRestricciones={setRestricciones}
-        handleEnviarWhatsapp={handleEnviarWhatsapp}
-        isFormValid={isFormValid}
-      />
+        {/* Section 3 - Location */}
+        <LocationSection onVerUbicacion={handleVerUbicacion} />
 
-      {/* Section 6 - Countdown */}
-      <CountdownSection timeLeft={timeLeft} />
+        {/* Section 4 - Dress Code */}
+        <DressCodeSection />
 
-      {/* Section 7 - Closing */}
-      <ClosingSection />
+        {/* Section 5 - RSVP Form */}
+        <RSVPSection
+          asistencia={asistencia}
+          setAsistencia={setAsistencia}
+          invitados={invitados}
+          setInvitados={setInvitados}
+          restricciones={restricciones}
+          setRestricciones={setRestricciones}
+          otrasIndicaciones={otrasIndicaciones}
+          setOtrasIndicaciones={setOtrasIndicaciones}
+          handleEnviarWhatsapp={handleEnviarWhatsapp}
+          isFormValid={isFormValid}
+        />
+
+        {/* Section 6 - Music */}
+        <MusicSection />
+
+        {/* Section 7 - Countdown */}
+        <CountdownSection timeLeft={timeLeft} />
+
+        {/* Section 8 - Closing */}
+        <ClosingSection />
+      </div>
     </div>
   );
 }
