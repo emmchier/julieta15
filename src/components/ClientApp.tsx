@@ -52,6 +52,7 @@ export function ClientApp({
   const [asistencia, setAsistencia] = useState(initialAsistencia);
   const [invitados, setInvitados] = useState(initialInvitados);
   const [restricciones, setRestricciones] = useState(initialRestricciones);
+  const [comentarios, setComentarios] = useState('');
 
   // Countdown state
   const [timeLeft, setTimeLeft] = useState({
@@ -92,13 +93,15 @@ export function ClientApp({
   const handleEnviarWhatsapp = () => {
     let summary = '';
     if (asistencia === 'No puedo ir :(') {
-      summary = `Soy/somos ${invitados.trim()}. Perdón, no puedo ir :(`;
+      summary = 'Hola! No podré ir al cumple :( ';
     } else {
-      summary =
-        `Soy/somos ${invitados.trim()} Sí, asistencia confirmada!` +
-        (restricciones.trim()
-          ? `. Restricción alimenticia: ${restricciones.trim()}.`
-          : `.`);
+      const restriccionesText = restricciones.trim()
+        ? `. Restricción alimenticia: ${restricciones.trim()}`
+        : '';
+      const comentariosText = comentarios.trim()
+        ? `. Otros comentarios: ${comentarios.trim()}`
+        : '';
+      summary = `Hola! Te confirmo la asistencia de: ${invitados.trim()}${restriccionesText}${comentariosText}. Nos vemos ahí :) !`;
     }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;
     window.open(whatsappUrl, '_blank');
@@ -113,10 +116,11 @@ export function ClientApp({
     window.open(mapsLocation.mapsUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const isFormValid = invitados.trim() !== '';
+  const isFormValid =
+    asistencia === 'No puedo ir :(' || invitados.trim() !== '';
 
   return (
-    <div className="w-full" style={{ backgroundColor: '#ECE7F6' }}>
+    <div className="w-full bg-[#F3F1FC]">
       <ParallaxFlowers />
 
       {/* Section 1 - Header */}
@@ -139,6 +143,8 @@ export function ClientApp({
         setInvitados={setInvitados}
         restricciones={restricciones}
         setRestricciones={setRestricciones}
+        comentarios={comentarios}
+        setComentarios={setComentarios}
         handleEnviarWhatsapp={handleEnviarWhatsapp}
         isFormValid={isFormValid}
       />

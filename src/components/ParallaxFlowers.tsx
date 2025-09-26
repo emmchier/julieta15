@@ -84,7 +84,7 @@ export function ParallaxFlowers() {
       {/* PetalosLeft1 - Arriba a la izquierda, un poco por debajo de FlowerLeft1, se pierde fuera de campo la mitad por la izquierda */}
       <div
         data-flower="petalos-left-1"
-        className="absolute left-[-20%] lg:left-[0%] top-[6%] translate-y-[30px] -rotate-[25deg] scale-100 lg:scale-200"
+        className="absolute left-[-10%] lg:left-[3.5%] top-[2%] translate-y-[70px] -rotate-[5deg] scale-100 lg:scale-200"
       >
         <PetalosLeft1 />
       </div>
