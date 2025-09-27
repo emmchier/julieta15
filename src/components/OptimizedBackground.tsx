@@ -8,10 +8,10 @@ interface OptimizedBackgroundProps {
   className?: string;
 }
 
-export function OptimizedBackground({ 
-  videoSrc, 
-  fallbackImageSrc, 
-  className = '' 
+export function OptimizedBackground({
+  videoSrc,
+  fallbackImageSrc,
+  className = '',
 }: OptimizedBackgroundProps) {
   return (
     <>
@@ -42,14 +42,15 @@ export function OptimizedBackground({
           height: '100vh',
           filter: 'brightness(1.2) contrast(1.1)',
         }}
-        onError={(e) => {
+        onError={e => {
           // If video fails, show fallback image
-          const fallback = e.currentTarget.previousElementSibling as HTMLElement;
+          const fallback = e.currentTarget
+            .previousElementSibling as HTMLElement;
           if (fallback) {
             fallback.style.opacity = '1';
           }
         }}
-        onEnded={(e) => {
+        onEnded={e => {
           // Fade out effect when video ends
           e.currentTarget.style.opacity = '0.3';
           setTimeout(() => {
@@ -61,6 +62,15 @@ export function OptimizedBackground({
         {/* Fallback for browsers that don't support video */}
         <img src={fallbackImageSrc} alt="Background" />
       </video>
+
+      {/* Global gradient overlay */}
+      <div
+        className="fixed top-0 left-0 w-full h-full z-1"
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.8) 100%)',
+        }}
+      />
     </>
   );
 }

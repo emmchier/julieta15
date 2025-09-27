@@ -38,7 +38,7 @@ export function RSVPSection({
   return (
     <div className="min-h-[100vh] flex items-center justify-center py-12">
       <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-container-desktop">
-        <GlassCard className="p-8 glass-card-desktop">
+        <GlassCard className="p-6 glass-card-desktop">
           <div className="section-content">
             <div className="flex justify-center mb-12">
               <div className="svg-icon-responsive">
@@ -61,7 +61,7 @@ export function RSVPSection({
                   style={{
                     fontFamily: 'Purple Purse, cursive',
                     color: '#E879F9',
-                    fontSize: '36px',
+                    fontSize: '32px',
                   }}
                 >
                   CONFIRMAR TU ASISTENCIA
@@ -90,7 +90,7 @@ export function RSVPSection({
                     fontSize: '16px',
                   }}
                 >
-                  Si, confirmo!
+                  Sí, confirmo!
                 </Label>
               </div>
               <div className="flex-1 flex items-center justify-center space-x-2">
@@ -136,12 +136,12 @@ export function RSVPSection({
                   </label>
                   <Textarea
                     id="nombres"
-                    placeholder="Escribe tu nombre y apellido..."
+                    placeholder="Escribí tu nombre y apellido..."
                     value={invitados}
                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                       setInvitados(e.target.value)
                     }
-                    className="w-full min-h-[40px] max-h-[50vh] resize-none"
+                    className="w-full min-h-12 max-h-[50vh] resize-none"
                     style={{
                       fontFamily: 'Quando, serif',
                       color: '#FFFFFF',
@@ -178,7 +178,7 @@ export function RSVPSection({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       setRestricciones(e.target.value)
                     }
-                    className="w-full h-10"
+                    className="w-full h-12"
                     style={{
                       fontFamily: 'Quando, serif',
                       color: '#FFFFFF',
@@ -207,16 +207,15 @@ export function RSVPSection({
                         display: 'block',
                       }}
                     >
-                      Otras indicaciones
+                      Otros comentarios
                     </label>
                     <Input
                       id="otrasIndicaciones"
-                      placeholder="Ej: Llegar tarde, traer algo específico..."
                       value={otrasIndicaciones}
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setOtrasIndicaciones(e.target.value)
                       }
-                      className="w-full h-10"
+                      className="w-full h-12"
                       style={{
                         fontFamily: 'Quando, serif',
                         color: '#FFFFFF',

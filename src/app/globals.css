@@ -269,6 +269,13 @@ html {
   line-height: 40px !important;
 }
 
+@media (max-width: 768px) {
+  [style*='Purple Purse'] {
+    transform: scale(0.85) !important;
+    transform-origin: center !important;
+  }
+}
+
 .section-content {
   z-index: 10;
   position: relative;
@@ -283,6 +290,8 @@ html {
 .counter-item {
   flex: 1;
   min-width: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 /* Desktop Cards - More horizontal */
@@ -310,6 +319,13 @@ html {
   }
 }
 
+/* Base styles for svg-scale-mobile */
+.svg-scale-mobile {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  width: 90% !important;
+  margin: 0 auto !important;
+}
+
 @media (width <= 320px) {
   .counter-mobile-grid.counter-mobile-grid.counter-mobile-grid {
     grid-template-rows: 1fr 1fr !important;
@@ -323,32 +339,34 @@ html {
   }
 
   .svg-scale-mobile.svg-scale-mobile.svg-scale-mobile {
-    transform: scale(0.7) !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
   }
 }
 
 /* Neon XV Text Styles */
 .neon-xv-text {
   font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 200px;
+  font-size: 240px;
   font-weight: 900;
-  color: #ffffff;
+  color: #ffedfe;
   text-align: center;
   margin: 0;
   padding: 0;
   display: block;
   width: 100%;
   text-shadow:
-    0 0 5px #ffffff,
-    0 0 10px #ffffff,
-    0 0 15px #ffffff,
+    0 0 5px #ffedfe,
+    0 0 10px #ffedfe,
+    0 0 15px #ffedfe,
     0 0 20px #a897ce,
     0 0 35px #a897ce,
     0 0 40px #a897ce,
     0 0 50px #a897ce,
     0 0 75px #a897ce;
   animation: neonFlicker 2s infinite alternate;
-  letter-spacing: 0;
+  letter-spacing: -0.08em;
   line-height: 1;
 }
 
@@ -387,16 +405,18 @@ html {
 
 @media (width <= 320px) {
   .neon-xv-text {
-    font-size: 170px;
+    font-size: 200px;
   }
 }
 
 @media (max-width: 768px) {
   .neon-xv-text {
-    font-size: 180px;
+    font-size: 220px;
   }
 
   .svg-scale-mobile {
-    transform: scale(0.8) !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
   }
 }

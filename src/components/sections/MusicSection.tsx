@@ -18,7 +18,7 @@ export function MusicSection() {
   return (
     <div className="h-[100vh] flex items-center justify-center relative">
       <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-container-desktop">
-        <GlassCard className="p-8 glass-card-desktop">
+        <GlassCard className="p-6 glass-card-desktop">
           <div className="section-content text-center">
             <div className="flex justify-center mb-8">
               <div className="svg-icon-responsive">
@@ -31,7 +31,7 @@ export function MusicSection() {
                 style={{
                   fontFamily: 'Quando, serif',
                   color: '#FFFFFF',
-                  fontSize: '18px',
+                  fontSize: '16px',
                 }}
               >
                 No hay fiesta sin buena música
@@ -41,7 +41,8 @@ export function MusicSection() {
                   style={{
                     fontFamily: 'Purple Purse, cursive',
                     color: '#E879F9',
-                    fontSize: '36px',
+                    fontSize: '27.1px',
+                    fontWeight: '500',
                   }}
                 >
                   ¿QUÉ CANCIÓN NO PUEDE FALTAR?
@@ -68,7 +69,7 @@ export function MusicSection() {
                   id="canciones"
                   value={canciones}
                   onChange={e => setCanciones(e.target.value)}
-                  placeholder="Escribe tus canciones favoritas..."
+                  placeholder="Escribí los nombres de las canciones o artistas..."
                   className="w-full min-h-[80px] resize-none"
                   style={{
                     fontFamily: 'Quando, serif',
@@ -95,22 +96,23 @@ export function MusicSection() {
                 style={{
                   fontFamily: 'Quando, serif',
                   color: '#FFFFFF',
-                  fontSize: '12px',
-                  marginBottom: '8px',
+                  fontSize: '14px',
+                  marginBottom: '24px',
+                  marginTop: '16px',
                 }}
               >
-                Sumá tus canciones
+                o sumá las canciones a Spotify
               </p>
               <Button
                 variant="outline"
                 onClick={handleSpotifyClick}
-                className="h-10 px-4 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase"
+                className="h-12 px-6 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase"
                 style={{
                   fontFamily: 'Quando, serif',
-                  fontSize: '12px',
+                  fontSize: '14px',
                 }}
               >
-                Lista de Spotify
+                Ir a Spotify
               </Button>
             </div>
           </div>
