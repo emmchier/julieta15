@@ -12,6 +12,7 @@ import {
   ClosingSection,
 } from './index';
 import { OptimizedBackground } from './OptimizedBackground';
+import { Header } from './Header';
 
 interface ClientAppProps {
   // Props que vienen del servidor
@@ -37,7 +38,7 @@ export function ClientApp({
   initialInvitados = '',
   initialRestricciones = '',
   targetDate = '2025-12-13T21:00:00-03:00',
-  whatsappNumber = '5492216781108',
+  whatsappNumber = '5491131795749',
   calendarEvent = {
     title: 'Cumple de 15 de Juli Chierchie',
     startDate: '20251213T210000',
@@ -53,7 +54,7 @@ export function ClientApp({
   const [asistencia, setAsistencia] = useState(initialAsistencia);
   const [invitados, setInvitados] = useState(initialInvitados);
   const [restricciones, setRestricciones] = useState(initialRestricciones);
-  const [otrasIndicaciones, setOtrasIndicaciones] = useState('');
+  const [listaCanciones, setListaCanciones] = useState('');
 
   // Countdown state
   const [timeLeft, setTimeLeft] = useState({
@@ -134,12 +135,12 @@ export function ClientApp({
       summary = 'Perdón, no puedo ir :(';
     } else {
       summary =
-        `Soy/somos ${invitados.trim()} Sí, asistencia confirmada!` +
+        `Soy ${invitados.trim()} y confirmo asistencia` +
         (restricciones.trim()
           ? `. Restricción alimenticia: ${restricciones.trim()}.`
           : `.`) +
-        (otrasIndicaciones.trim()
-          ? ` Otras indicaciones: ${otrasIndicaciones.trim()}.`
+        (listaCanciones.trim()
+          ? ` Sugiero las canciones: ${listaCanciones.trim()}.`
           : `.`);
     }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;
@@ -160,7 +161,7 @@ export function ClientApp({
 
   return (
     <div
-      className={`w-full max-w-full mx-auto relative transition-opacity duration-1000 ease-out ${
+      className={`w-full max-w-full mx-auto relative transition-opacity duration-1000 ease-out overflow-x-hidden ${
         isLoaded ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -175,23 +176,8 @@ export function ClientApp({
         <source src="/high-destiny.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Audio Control Button */}
-      <button
-        onClick={toggleAudio}
-        className="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition-all duration-200"
-        aria-label={isAudioPlaying ? 'Pausar música' : 'Reproducir música'}
-      >
-        {isAudioPlaying ? (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-          </svg>
-        ) : (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        )}
-      </button>
-
+      {/* Fixed Header */}
+      <Header onToggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} />
 
       {/* Content with higher z-index */}
       <div className="relative z-10">
@@ -215,8 +201,8 @@ export function ClientApp({
           setInvitados={setInvitados}
           restricciones={restricciones}
           setRestricciones={setRestricciones}
-          otrasIndicaciones={otrasIndicaciones}
-          setOtrasIndicaciones={setOtrasIndicaciones}
+          listaCanciones={listaCanciones}
+          setListaCanciones={setListaCanciones}
           handleEnviarWhatsapp={handleEnviarWhatsapp}
           isFormValid={isFormValid}
         />

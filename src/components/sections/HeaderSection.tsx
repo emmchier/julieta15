@@ -4,7 +4,7 @@ import { Julieta } from '../svg';
 export function HeaderSection() {
   return (
     <div className="h-[100vh] flex items-center justify-center relative overflow-hidden">
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0">
+      <div className="w-full max-w-[320px] sm:max-w-[360px] mx-auto px-4 sm:px-5 lg:px-0">
         <div className="section-content text-center">
           <div className="relative mb-4 flex justify-center items-center w-full h-[200px]">
             {/* Neon XV Text - Perfectly centered */}

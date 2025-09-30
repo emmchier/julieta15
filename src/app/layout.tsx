@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${quando.variable} ${purplePurse.variable} antialiased`}
+        className={`${quando.variable} ${purplePurse.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>

@@ -19,7 +19,7 @@ export function ClosingSection() {
         </div>
       </div>
 
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 relative z-20">
+      <div className="max-w-[320px] sm:max-w-[360px] px-2 sm:px-5 lg:px-0 relative z-20">
         <div className="section-content text-center">
           <p
             style={{

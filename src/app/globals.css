@@ -101,6 +101,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  min-width: 320px;
 }
 
 html {
@@ -294,14 +295,24 @@ html {
   padding-bottom: 8px;
 }
 
-/* Desktop Cards - More horizontal */
-@media (min-width: 769px) {
-  .glass-card-desktop {
-    max-width: 800px !important;
-  }
+.glass-card-desktop {
+  max-width: 320px;
+  padding: 24px;
+}
 
-  .section-container-desktop {
-    max-width: 600px !important;
+@media (min-width: 640px) {
+  .glass-card-desktop {
+    max-width: 600px;
+    min-width: 600px;
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .glass-card-desktop {
+    max-width: 600px;
+    min-width: 600px;
+    padding: 32px;
   }
 }
 

@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Divider, Music } from '../svg';
-import { GlassCard, Button, Textarea } from '../ui';
+import React from 'react';
+import { Music } from '../svg';
+import { GlassCard, Button } from '../ui';
 
 export function MusicSection() {
-  const [canciones, setCanciones] = useState('');
-
   const handleSpotifyClick = () => {
     window.open(
-      'https://open.spotify.com/playlist/00HtPcfBRrxU0oSd3FNfsG?si=ac10c2c9dd3147f9',
+      'https://open.spotify.com/playlist/0necHFEgbvhfbmMxar88IJ?si=iRa7kyaERG-fTVpQZB3BHg&pt=e9196bd8f7315806208f35f2026d7d8e&pi=V66SyPYrQh-Lq',
       '_blank',
       'noopener,noreferrer'
     );
@@ -17,107 +15,53 @@ export function MusicSection() {
 
   return (
     <div className="h-[100vh] flex items-center justify-center relative">
-      <div className="w-full max-w-[360px] mx-auto px-5 lg:px-0 section-container-desktop">
-        <GlassCard className="p-6 glass-card-desktop">
-          <div className="section-content text-center">
-            <div className="flex justify-center mb-8">
-              <div className="svg-icon-responsive">
-                <Music />
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <p
-                style={{
-                  fontFamily: 'Quando, serif',
-                  color: '#FFFFFF',
-                  fontSize: '16px',
-                }}
-              >
-                No hay fiesta sin buena música
-              </p>
-              <div className="my-2">
-                <h2
-                  style={{
-                    fontFamily: 'Purple Purse, cursive',
-                    color: '#E879F9',
-                    fontSize: '27.1px',
-                    fontWeight: '500',
-                  }}
-                >
-                  ¿QUÉ CANCIÓN NO PUEDE FALTAR?
-                </h2>
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <div className="form-group">
-                <label
-                  htmlFor="canciones"
-                  className="form-label text-left"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    fontSize: '14px',
-                    marginBottom: '8px',
-                    display: 'block',
-                  }}
-                >
-                  Lista de canciones
-                </label>
-                <Textarea
-                  id="canciones"
-                  value={canciones}
-                  onChange={e => setCanciones(e.target.value)}
-                  placeholder="Escribí los nombres de las canciones o artistas..."
-                  className="w-full min-h-[80px] resize-none"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    fontSize: '16px',
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFFFFF',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    outline: 'none',
-                  }}
-                />
-              </div>
-            </div>
-
-            <div className="flex justify-center mb-8">
-              <div className="svg-icon-responsive">
-                <Divider />
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <p
-                style={{
-                  fontFamily: 'Quando, serif',
-                  color: '#FFFFFF',
-                  fontSize: '14px',
-                  marginBottom: '24px',
-                  marginTop: '16px',
-                }}
-              >
-                o sumá las canciones a Spotify
-              </p>
-              <Button
-                variant="outline"
-                onClick={handleSpotifyClick}
-                className="h-12 px-6 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase"
-                style={{
-                  fontFamily: 'Quando, serif',
-                  fontSize: '14px',
-                }}
-              >
-                Ir a Spotify
-              </Button>
+      <GlassCard className="glass-card-desktop">
+        <div className="section-content text-center">
+          <div className="flex justify-center mb-8">
+            <div className="svg-icon-responsive">
+              <Music />
             </div>
           </div>
-        </GlassCard>
-      </div>
+
+          <div className="mb-8">
+            <p
+              style={{
+                fontFamily: 'Quando, serif',
+                color: '#FFFFFF',
+                fontSize: '16px',
+              }}
+            >
+              Te invito a
+            </p>
+            <div className="my-2">
+              <h2
+                style={{
+                  fontFamily: 'Purple Purse, cursive',
+                  color: '#E879F9',
+                  fontSize: '27.1px',
+                  fontWeight: '500',
+                }}
+              >
+                SUMAR TUS CANCIONES
+              </h2>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Button
+              onClick={handleSpotifyClick}
+              variant="outline"
+              className="h-12 px-3 sm:px-6 border-[#FFFFFF] bg-transparent hover:bg-white/20 active:bg-white/30 text-[#FFFFFF] font-normal tracking-[0.1em] uppercase"
+              style={{
+                fontFamily: 'Quando, serif',
+                fontSize: '14px',
+              }}
+            >
+              en Spotify
+            </Button>
+          </div>
+        </div>
+      </GlassCard>
     </div>
   );
 }
