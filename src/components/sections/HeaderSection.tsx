@@ -3,10 +3,21 @@ import { Julieta, ArrowDown } from '../svg';
 
 // Animated Arrow Component
 const AnimatedArrow = () => {
+  const scrollToNextSection = () => {
+    const nextSection = document.querySelector('#date-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
-    <div className="absolute -top-16 sm:-top-[88px] left-1/2 transform -translate-x-1/2 z-20">
+    <div className="absolute top-full mt-16 left-1/2 transform -translate-x-1/2 z-20">
       <div
-        className="animate-bounce-slow"
+        className="animate-bounce-slow cursor-pointer"
+        onClick={scrollToNextSection}
         style={{
           filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
         }}
@@ -25,7 +36,7 @@ export function HeaderSection() {
           {/* Animated Arrow */}
           <AnimatedArrow />
 
-          <div className="relative mb-4 flex justify-center items-center w-full h-[200px]">
+          <div className="relative mb-16 flex justify-center items-center w-full h-[200px]">
             {/* Neon XV Text - Perfectly centered */}
             <div className="absolute inset-0 flex justify-center items-center w-full -translate-x-3">
               <h1 className="neon-xv-text">XV</h1>
@@ -44,11 +55,11 @@ export function HeaderSection() {
             </div>
           </div>
           <p
-            className="text-center mx-6 mt-20 leading-relaxed"
+            className="text-center mx-6 leading-relaxed"
             style={{
               fontFamily: 'Quando, serif',
               color: '#FFFFFF',
-              fontSize: '18px',
+              fontSize: '16px',
               fontWeight: '500',
             }}
           >

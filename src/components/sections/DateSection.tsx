@@ -8,7 +8,10 @@ interface DateSectionProps {
 
 export function DateSection({ onAgendarEvento }: DateSectionProps) {
   return (
-    <div className="h-[100vh] flex items-center justify-center align-middle relative">
+    <div
+      id="date-section"
+      className="h-[100vh] flex items-center justify-center align-middle relative"
+    >
       <GlassCard className="glass-card-desktop">
         <div className="section-content text-center">
           {/* Top SVG (title flourish) */}

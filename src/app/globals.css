@@ -416,13 +416,13 @@ html {
 
 @media (width <= 320px) {
   .neon-xv-text {
-    font-size: 200px;
+    font-size: 180px;
   }
 }
 
 @media (max-width: 768px) {
   .neon-xv-text {
-    font-size: 220px;
+    font-size: 200px;
   }
 
   .svg-scale-mobile {
