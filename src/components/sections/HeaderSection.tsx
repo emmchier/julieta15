@@ -14,7 +14,7 @@ const AnimatedArrow = () => {
   };
 
   return (
-    <div className="absolute top-full mt-16 left-1/2 transform -translate-x-1/2 z-20">
+    <div className="absolute top-full mt-8 left-1/2 transform -translate-x-1/2 z-20">
       <div
         className="animate-bounce-slow cursor-pointer"
         onClick={scrollToNextSection}
@@ -36,7 +36,7 @@ export function HeaderSection() {
           {/* Animated Arrow */}
           <AnimatedArrow />
 
-          <div className="relative mb-16 flex justify-center items-center w-full h-[200px]">
+          <div className="relative mb-8 flex justify-center items-center w-full h-[200px]">
             {/* Neon XV Text - Perfectly centered */}
             <div className="absolute inset-0 flex justify-center items-center w-full -translate-x-3">
               <h1 className="neon-xv-text">XV</h1>
@@ -55,7 +55,7 @@ export function HeaderSection() {
             </div>
           </div>
           <p
-            className="text-center mx-6 leading-relaxed"
+            className="text-center mx-6 leading-relaxed mt-8"
             style={{
               fontFamily: 'Quando, serif',
               color: '#FFFFFF',
