@@ -51,6 +51,14 @@ export default function RootLayout({
     <html lang="es">
       <body
         className={`${quando.variable} ${purplePurse.variable} antialiased overflow-x-hidden`}
+        style={{
+          backgroundImage: 'url(/static-background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          minHeight: '100vh',
+        }}
       >
         {children}
       </body>

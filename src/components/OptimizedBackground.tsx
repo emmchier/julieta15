@@ -16,9 +16,9 @@ export function OptimizedBackground({
 }: OptimizedBackgroundProps) {
   return (
     <>
-      {/* Fallback Image - Hidden by default, only shows if video fails */}
+      {/* Fallback Image - Always visible by default */}
       <div
-        className="fixed top-0 left-0 w-full h-full object-cover z-0 opacity-0"
+        className="fixed top-0 left-0 w-full h-full object-cover z-0"
         style={{
           backgroundImage: `url(${fallbackImageSrc})`,
           backgroundSize: 'cover',
@@ -30,7 +30,7 @@ export function OptimizedBackground({
         }}
       />
 
-      {/* Video - Starts immediately */}
+      {/* Video - Starts with opacity 0, fades in when loaded */}
       <video
         autoPlay
         loop
@@ -42,14 +42,16 @@ export function OptimizedBackground({
           width: '100%',
           height: '100vh',
           filter: 'brightness(1.2) contrast(1.1)',
+          opacity: 0,
+          transition: 'opacity 0.5s ease-in-out',
         }}
-        onError={e => {
-          // If video fails, show fallback image
-          const fallback = e.currentTarget
-            .previousElementSibling as HTMLElement;
-          if (fallback) {
-            fallback.style.opacity = '1';
-          }
+        onLoadedData={e => {
+          // When video loads successfully, fade it in
+          e.currentTarget.style.opacity = '1';
+        }}
+        onError={() => {
+          // If video fails, keep fallback image visible
+          console.warn('Video failed to load, using fallback image');
         }}
         onEnded={e => {
           // Fade out effect when video ends
