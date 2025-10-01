@@ -15,12 +15,13 @@ const purplePurse = Purple_Purse({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cumple15juli.com'),
+  metadataBase: new URL('https://www.cumple15juli.com'),
   title: 'Cumple 15 - Julieta Chierchie',
   description: 'Invitación al cumpleaños de 15 de Julieta Chierchie',
   openGraph: {
     title: 'Cumple 15 - Julieta Chierchie',
     description: 'Invitación al cumpleaños de 15 de Julieta Chierchie',
+    url: 'https://www.cumple15juli.com', // <- agregar URL canónica
     images: [
       {
         url: '/tag.png',
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     ],
     locale: 'es_AR',
     type: 'website',
+    // fbAppId: 'TU_APP_ID_AQUI', // opcional, solo si usás Facebook Insights
   },
   twitter: {
     card: 'summary_large_image',
