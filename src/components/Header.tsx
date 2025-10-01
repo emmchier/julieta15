@@ -39,7 +39,7 @@ export function Header({ onToggleAudio, isAudioPlaying = false }: HeaderProps) {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-auto px-8 pt-4 pb-4 flex transition-all duration-500 bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-[9998] h-auto px-6 sm:px-8 pt-4 pb-4 flex transition-all duration-500 bg-transparent pointer-events-auto">
       {/* Left side - XV + Julieta (appears on scroll) */}
       <div
         className={`flex items-center gap-2 transition-all duration-500 ${
@@ -57,11 +57,9 @@ export function Header({ onToggleAudio, isAudioPlaying = false }: HeaderProps) {
         >
           XV
         </div>
-        {!isMobile && (
-          <div className="w-16 h-16">
-            <Julieta width={64} height={64} color="#E879F9" />
-          </div>
-        )}
+        <div className="w-16 h-16">
+          <Julieta width={64} height={64} color="#F3A8F8" />
+        </div>
       </div>
 
       {/* Center/Right - Audio button */}

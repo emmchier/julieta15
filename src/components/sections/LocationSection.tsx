@@ -59,9 +59,9 @@ export function LocationSection({ onVerUbicacion }: LocationSectionProps) {
               <Image
                 src="/salon.jpeg"
                 alt="Salón Jano's Darwin 2"
-                width={400}
-                height={300}
-                className="w-full rounded-2xl cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                width={200}
+                height={150}
+                className="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] mx-auto rounded-2xl cursor-pointer hover:opacity-90 transition-opacity duration-200"
                 style={{ borderRadius: '16px' }}
                 onClick={() => setIsLightboxOpen(true)}
               />

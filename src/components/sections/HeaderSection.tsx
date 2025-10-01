@@ -33,8 +33,9 @@ export function HeaderSection() {
               fontWeight: '500',
             }}
           >
-            Quince años de sueños, y hoy uno se hace realidad. ¡Quiero que seas
-            parte de mi celebración!
+            Quince años de sueños, y hoy uno se hace realidad.
+            <br />
+            ¡Quiero que seas parte de mi celebración!
           </p>
         </div>
       </div>
