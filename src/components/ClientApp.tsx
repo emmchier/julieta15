@@ -16,45 +16,36 @@ import { Header } from './Header';
 
 interface ClientAppProps {
   // Props que vienen del servidor
-  initialAsistencia?: string;
-  initialInvitados?: string;
-  initialRestricciones?: string;
-  targetDate?: string; // Fecha objetivo para el countdown
-  whatsappNumber?: string; // Número de WhatsApp
-  calendarEvent?: {
+  initialAsistencia: string;
+  initialInvitados: string;
+  initialRestricciones: string;
+  targetDate: string; // Fecha objetivo para el countdown
+  whatsappNumber: string; // Número de WhatsApp
+  calendarEvent: {
     title: string;
     startDate: string;
     endDate: string;
     location: string;
   };
-  mapsLocation?: {
+  mapsLocation: {
     address: string;
     mapsUrl: string;
   };
 }
 
 export function ClientApp({
-  initialAsistencia = 'Si, confirmo!',
-  initialInvitados = '',
-  initialRestricciones = '',
-  targetDate = '2025-12-13T21:00:00-03:00',
-  whatsappNumber = '5491131795749',
-  calendarEvent = {
-    title: 'Cumple de 15 de Juli Chierchie',
-    startDate: '20251213T210000',
-    endDate: '20251214T050000',
-    location: 'Darwin 1351, CABA',
-  },
-  mapsLocation = {
-    address: 'Darwin 1351, CABA',
-    mapsUrl: 'https://maps.app.goo.gl/6cpaVBF1th89nX137',
-  },
+  initialAsistencia,
+  initialInvitados,
+  initialRestricciones,
+  targetDate,
+  whatsappNumber,
+  calendarEvent,
+  mapsLocation,
 }: ClientAppProps) {
   // Form state
   const [asistencia, setAsistencia] = useState(initialAsistencia);
   const [invitados, setInvitados] = useState(initialInvitados);
   const [restricciones, setRestricciones] = useState(initialRestricciones);
-  const [listaCanciones, setListaCanciones] = useState('');
 
   // Countdown state
   const [timeLeft, setTimeLeft] = useState({
@@ -135,12 +126,9 @@ export function ClientApp({
       summary = 'Perdón, no puedo ir :(';
     } else {
       summary =
-        `Soy ${invitados.trim()} y confirmo asistencia` +
+        `Hola! Soy ${invitados.trim()} y confirmo asistencia` +
         (restricciones.trim()
           ? `. Restricción alimenticia: ${restricciones.trim()}.`
-          : `.`) +
-        (listaCanciones.trim()
-          ? ` Sugiero las canciones: ${listaCanciones.trim()}.`
           : `.`);
     }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;
@@ -201,8 +189,6 @@ export function ClientApp({
           setInvitados={setInvitados}
           restricciones={restricciones}
           setRestricciones={setRestricciones}
-          listaCanciones={listaCanciones}
-          setListaCanciones={setListaCanciones}
           handleEnviarWhatsapp={handleEnviarWhatsapp}
           isFormValid={isFormValid}
         />

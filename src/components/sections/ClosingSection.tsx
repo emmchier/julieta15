@@ -15,7 +15,7 @@ export function ClosingSection() {
 
       <div className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 z-10 svg-scale-mobile">
         <div style={{ transform: 'scale(0.8)', opacity: 0.7 }}>
-          <Julieta color="#E879F9" width={300} height={130} />
+          <Julieta color="#F3A8F8" width={300} height={130} />
         </div>
       </div>
 

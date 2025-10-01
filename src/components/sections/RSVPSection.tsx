@@ -4,7 +4,6 @@ import {
   RadioGroupItem,
   Label,
   Input,
-  Textarea,
   Button,
   GlassCard,
 } from '../ui/index';
@@ -17,8 +16,6 @@ interface RSVPSectionProps {
   setInvitados: (value: string) => void;
   restricciones: string;
   setRestricciones: (value: string) => void;
-  listaCanciones: string;
-  setListaCanciones: (value: string) => void;
   handleEnviarWhatsapp: () => void;
   isFormValid: boolean;
 }
@@ -30,8 +27,6 @@ export function RSVPSection({
   setInvitados,
   restricciones,
   setRestricciones,
-  listaCanciones,
-  setListaCanciones,
   handleEnviarWhatsapp,
   isFormValid,
 }: RSVPSectionProps) {
@@ -53,7 +48,7 @@ export function RSVPSection({
                 fontSize: '18px',
               }}
             >
-              2 preguntas:
+              Solo necesito
             </p>
             <div className="mt-4">
               <h2
@@ -63,7 +58,7 @@ export function RSVPSection({
                   fontSize: '30px',
                 }}
               >
-                I. ¿CONFIRMO TU ASISTENCIA?
+                CONFIRMAR TU ASISTENCIA
               </h2>
             </div>
           </div>
@@ -133,14 +128,14 @@ export function RSVPSection({
                 >
                   Nombre y apellido
                 </label>
-                <Textarea
+                <Input
                   id="nombres"
                   placeholder="Escribí tu nombre y apellido..."
                   value={invitados}
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setInvitados(e.target.value)
                   }
-                  className="w-full min-h-12 max-h-[50vh] resize-none"
+                  className="w-full h-12"
                   style={{
                     fontFamily: 'Quando, serif',
                     color: '#FFFFFF',
@@ -178,55 +173,6 @@ export function RSVPSection({
                     setRestricciones(e.target.value)
                   }
                   className="w-full h-12"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFFFFF',
-                    borderRadius: '8px',
-                    padding: '12px',
-                    outline: 'none',
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Sección de música */}
-            <div>
-              <div className="text-center mb-6">
-                <h2
-                  style={{
-                    fontFamily: 'Purple Purse, cursive',
-                    color: '#E879F9',
-                    fontSize: '25px',
-                    fontWeight: '500',
-                  }}
-                >
-                  II. ¿QUÉ CANCIÓN NO PUEDE FALTAR?
-                </h2>
-              </div>
-              <div className="form-group">
-                <label
-                  htmlFor="listaCanciones"
-                  className="form-label text-left"
-                  style={{
-                    fontFamily: 'Quando, serif',
-                    color: '#FFFFFF',
-                    fontSize: '14px',
-                    marginBottom: '8px',
-                    display: 'block',
-                  }}
-                >
-                  Lista de canciones
-                </label>
-                <Textarea
-                  id="listaCanciones"
-                  value={listaCanciones}
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                    setListaCanciones(e.target.value)
-                  }
-                  placeholder="Escribí los nombres de las canciones o artistas..."
-                  className="w-full min-h-[80px] resize-none"
                   style={{
                     fontFamily: 'Quando, serif',
                     color: '#FFFFFF',

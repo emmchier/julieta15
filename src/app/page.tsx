@@ -5,7 +5,7 @@ import { ClientApp } from '../components';
 const EVENT_CONFIG = {
   // Event details
   targetDate: '2025-12-13T21:00:00-03:00', // December 13, 2025 at 21:00 Buenos Aires time
-  whatsappNumber: '5492216781108',
+  whatsappNumber: '5491131795749',
 
   // Calendar event configuration
   calendarEvent: {

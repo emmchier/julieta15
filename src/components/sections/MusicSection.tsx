@@ -31,7 +31,7 @@ export function MusicSection() {
                 fontSize: '16px',
               }}
             >
-              Te invito a
+              ¿Qué canción no puede faltar?
             </p>
             <div className="my-2">
               <h2
@@ -42,7 +42,7 @@ export function MusicSection() {
                   fontWeight: '500',
                 }}
               >
-                SUMAR TUS CANCIONES
+                SUMÁ TUS CANCIONES
               </h2>
             </div>
           </div>

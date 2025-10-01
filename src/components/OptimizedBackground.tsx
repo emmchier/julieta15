@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface OptimizedBackgroundProps {
   videoSrc: string;
@@ -60,7 +61,12 @@ export function OptimizedBackground({
       >
         <source src={videoSrc} type="video/mp4" />
         {/* Fallback for browsers that don't support video */}
-        <img src={fallbackImageSrc} alt="Background" />
+        <Image
+          src={fallbackImageSrc}
+          alt="Background"
+          fill
+          style={{ objectFit: 'cover' }}
+        />
       </video>
 
       {/* Global gradient overlay */}
