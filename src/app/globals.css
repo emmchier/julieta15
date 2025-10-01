@@ -431,3 +431,24 @@ html {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
   }
 }
+
+/* Animated Arrow Styles */
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}

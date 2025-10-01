@@ -1,11 +1,30 @@
 import React from 'react';
-import { Julieta } from '../svg';
+import { Julieta, ArrowDown } from '../svg';
+
+// Animated Arrow Component
+const AnimatedArrow = () => {
+  return (
+    <div className="absolute -top-16 sm:-top-[88px] left-1/2 transform -translate-x-1/2 z-20">
+      <div
+        className="animate-bounce-slow"
+        style={{
+          filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
+        }}
+      >
+        <ArrowDown />
+      </div>
+    </div>
+  );
+};
 
 export function HeaderSection() {
   return (
     <div className="h-[100vh] flex items-center justify-center relative overflow-hidden">
-      <div className="w-full max-w-[320px] sm:max-w-[360px] mx-auto px-4 sm:px-5 lg:px-0">
+      <div className="w-full max-w-[320px] sm:max-w-[360px] mx-auto px-4 sm:px-5 lg:px-0 relative">
         <div className="section-content text-center">
+          {/* Animated Arrow */}
+          <AnimatedArrow />
+
           <div className="relative mb-4 flex justify-center items-center w-full h-[200px]">
             {/* Neon XV Text - Perfectly centered */}
             <div className="absolute inset-0 flex justify-center items-center w-full -translate-x-3">
