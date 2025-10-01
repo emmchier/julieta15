@@ -126,7 +126,7 @@ export function ClientApp({
       summary = 'Perdón, no puedo ir :(';
     } else {
       summary =
-        `Soy ${invitados.trim()} y confirmo asistencia` +
+        `Hola! Soy ${invitados.trim()} y confirmo asistencia` +
         (restricciones.trim()
           ? `. Restricción alimenticia: ${restricciones.trim()}.`
           : `.`);
